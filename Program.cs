@@ -1,4 +1,4 @@
-﻿using CS_Day2.Untils;
+using CS_Day2.Untils;
 using CS_Day2.Enum;
 
 namespace CS_Day2
@@ -36,7 +36,14 @@ namespace CS_Day2
             Console.WriteLine("\nOldest member: ");
             var maxAge = membersUntil.Members.Max(m => m.Age);
             var maxAgeMember = membersUntil.Members.FirstOrDefault(member => member.Age == maxAge);
-            Console.WriteLine($"\t{maxAgeMember.MembersInfo}");
+            if (maxAgeMember == null)
+            {
+                Console.WriteLine("Khong co thanh vien nao thoa man!");
+            }
+            else
+            {
+                Console.WriteLine($"\t{maxAgeMember.MembersInfo}");
+            }
             Console.WriteLine("-------------------------------------------------------------------------------------");
 
             Console.WriteLine("\nFull name of members: ");
@@ -57,7 +64,14 @@ namespace CS_Day2
 
             Console.WriteLine("\nFirst member who was born in Ha Noi: ");
             var result = membersUntil.Members.FirstOrDefault(member => member.BirthPlace.Equals("Ha Noi"));
-            Console.WriteLine($"\t{result.MembersInfo}");
+            if (result == null)
+            {
+                Console.WriteLine("Khong co thanh vien nao thoa man!");
+            }
+            else
+            {
+                Console.WriteLine($"\t{result.MembersInfo}");
+            }
         }
     }
 }
